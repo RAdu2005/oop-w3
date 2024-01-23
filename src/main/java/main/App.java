@@ -12,8 +12,7 @@ public class App
         String zooName = sc.nextLine();
         Zoo myZoo = new Zoo(zooName);
 
-        boolean run = true;
-        while(run){
+        while(true){
             System.out.println("1) Create a new animal, 2) List all animals, 3) Run animals, 0) End the program");
             String optionInput = sc.nextLine();
             
@@ -55,14 +54,14 @@ public class App
 
                 case 0:
                     System.out.println("Thank you for using the program.");
-                    run = false;
+                    sc.close();
+                    System.exit(0);
                     return;
 
                 default:
-                    System.out.println("Wrong input value!");
+                    System.out.println("Wrong input value");
                     break;
             }
         }
-        sc.close();
     }
 }
